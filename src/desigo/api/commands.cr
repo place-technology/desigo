@@ -8,7 +8,7 @@ module Desigo
         JSON.parse(@session.get("/commands/#{id}").body)
       end
 
-      def execute(id : String, property_name : String, command_id : String, command_inputs_for_execution : Array)
+      def execute(id : String, property_name : String, command_id : String, command_inputs_for_execution : Array(Hash))
         body = [
           {
             "CommandInputForExecution": command_inputs_for_execution,
