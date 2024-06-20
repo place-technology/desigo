@@ -19,6 +19,7 @@ module Crest
       @params_encoder = options.fetch(:params_encoder, Crest::FlatParamsEncoder).as(Crest::ParamsEncoder.class)
       @user_agent = options.fetch(:user_agent, nil).as(String | Nil)
       @redirection_history = [] of Crest::Response
+      @multipart = false
 
       set_headers!(headers)
       set_cookies!(cookies) unless cookies.empty?
